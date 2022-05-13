@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { Usuario } from '../classes/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,12 @@ import { Socket } from 'ngx-socket-io';
 export class WebsocketService {
 
   public socketStatus=false;
+  public usuario?:Usuario;
+
   constructor(
     private socket:Socket
   ) {
+    this.cargarStorage();
     this.checkStatus();
   }
 
@@ -42,6 +46,30 @@ export class WebsocketService {
 
     return this.socket.fromEvent(evento);
 
+  }
+
+  //se puede manejar con jsonwebtoken y mandarlo por sockets
+  loginWS(nombre:string){
+    return new Promise((resolve:any, reject:any)=>{
+      this.emit('configurar-usuario',{nombre},(resp:any)=>{
+        
+        this.usuario=new Usuario(nombre);
+        this.guardarStorage();
+        //validar la respuesta que obtengamos del servidor
+
+        resolve();
+      })
+    })
+  }
+
+  guardarStorage(){
+    localStorage.setItem('usuario',JSON.stringify(this.usuario));
+  }
+
+  cargarStorage(){
+    if(localStorage.getItem('usuario')){
+      this.usuario=JSON.parse(localStorage.getItem('usuario') || '{}');
+    }
   }
 
 }

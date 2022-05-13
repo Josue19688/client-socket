@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="login-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="login-form">
+                <div class="logo">
+                    <a href="dashboard-analytics.html"><img src="assets\img\logo.png" alt="image"></a>
+                </div>
+
+                <h2>Bienvenido</h2>
+
+                <form (ngSubmit)="ingresar()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="nombre" autofocus autocomplete="off" [(ngModel)]="nombre">
+                        <span class="label-title"><i class='bx bx-user'></i></span>
+                    </div>
+                    
+
+                    <button type="submit" class="login-btn" [disabled]="nombre.trim().length===0">Login</button>
+
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

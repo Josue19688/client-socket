@@ -1,1 +1,89 @@
-<p>mensajes works!</p>
+<div class="chat-content-area mt-20">
+    <div class="sidebar-left">
+        <div class="sidebar">
+            <div class="chat-sidebar-header d-flex align-items-center">
+                <div class="avatar mr-3">
+                    <img src="assets\img\user1.jpg" width="50" height="50" class="rounded-circle" alt="image">
+                </div>
+
+                <form class="form-group position-relative mb-0">
+                    <label><i class='bx bx-search'></i></label>
+                    <input type="text" class="form-control" placeholder="Search here...">
+                </form>
+            </div>
+
+            <app-lista-usuarios></app-lista-usuarios>
+        </div>
+    </div>
+
+    <div class="content-right">
+        <div class="chat-area">
+            <div class="chat-list-wrapper">
+                <div class="chat-list">
+                    <div class="chat-list-header d-flex align-items-center">
+                        <div class="header-left d-flex align-items-center mr-3">
+                            <div class="avatar mr-3">
+                                <img src="assets\img\user2.jpg" width="70" height="70" class="rounded-circle" alt="image">
+                                <span class="status-online"></span>
+                            </div>
+                            <h6 class="mb-0 font-weight-bold">Ellen Cranford</h6>
+                        </div>
+                    </div>
+
+                    <div class="chat-container" data-simplebar=""  id="chat-mensajes">
+                        <div class="chat-content">
+                            <div class="chat" *ngFor="let msg of mensajes">
+                                <div class="chat-avatar">
+                                    <a href="#" class="d-inline-block">
+                                        <img src="assets\img\user1.jpg" width="50" height="50" class="rounded-circle" alt="image">
+                                    </a>
+                                </div>
+
+                                <div class="chat-body">
+                                    <div class="chat-message">
+                                        <p> {{msg.de}}:{{msg.cuerpo}}</p>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat chat-left">
+                                <div class="chat-avatar">
+                                    <a href="#" class="d-inline-block">
+                                        <img src="assets\img\user2.jpg" width="50" height="50" class="rounded-circle" alt="image">
+                                    </a>
+                                </div>
+
+                                <div class="chat-body">
+                                    <div class="chat-message">
+                                        <p>Could you describe EnvyTheme in one sentence?</p>
+                                        <span class="time d-block">7:45 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="chat-list-footer" >
+                        <form class="d-flex align-items-center" (ngSubmit)="enviar()">
+                            <div class="btn-box d-flex align-items-center mr-3">
+                                <button class="emoji-btn d-inline-block mr-2" data-toggle="tooltip" data-placement="top" title="Emoji" type="button"><i class='bx bx-smile'></i></button>
+
+                                <button class="file-attachment-btn d-inline-block" data-toggle="tooltip" data-placement="top" title="File Attachment" type="button"><i class='bx bx-paperclip'></i></button>
+                            </div>
+
+                            <input type="text" [(ngModel)]="texto"
+                            class="form-control chat-input" name="texto"
+                            placeholder="Mensajes..."
+                            autofocus
+                            autocomplete="off">
+
+                            <button type="submit" class="send-btn d-inline-block">Send <i class="bx bx-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
