@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from './services/chat.service';
 import { WebsocketService } from './services/websocket.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class AppComponent implements OnInit{
   title = 'app';
 
   constructor(
-    public wsService:WebsocketService
+    public wsService:WebsocketService,
+    public chatService:ChatService
   ){}
 
   ngOnInit(){

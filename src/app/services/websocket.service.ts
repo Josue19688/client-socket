@@ -24,4 +24,24 @@ export class WebsocketService {
       this.socketStatus=false;
     })
   }
+
+
+  /**
+   * Evento que se encargara de emitir todos
+   * los eventos
+   */
+
+  emit(evento:string, payload?:any, callback?:any){
+    console.log('Emitiendo evento',evento);
+    this.socket.emit(evento,payload,callback);
+  }
+ /*
+ *ESTE METODO SE ENCARGARA DE ESCUCHAR TODOS LOS EVENTOS DEL SERVER
+  */
+  listen(evento:string){
+
+    return this.socket.fromEvent(evento);
+
+  }
+
 }
