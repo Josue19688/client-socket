@@ -1,6 +1,7 @@
 import { Component,  OnDestroy,OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ChatService } from 'src/app/services/chat.service';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-mensajes',
@@ -13,7 +14,10 @@ export class MensajesComponent implements OnInit, OnDestroy {
   mensajesSubscription:Subscription|undefined;
   elemento:any ;
   mensajes:any[]=[];
-  constructor(public chatService:ChatService) { }
+  constructor(
+    public wsService:WebsocketService,
+    public chatService:ChatService
+    ) { }
 
   ngOnInit(): void {
     this.elemento=document.getElementById('chat-mensajes');
