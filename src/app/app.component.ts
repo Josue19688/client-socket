@@ -20,4 +20,10 @@ export class AppComponent implements OnInit{
       console.log(msg);
     })
   }
+
+
+  //cuando migremos al main llevar este metodo tambien
+  salir(){
+    this.wsService.logoutWS();
+  }
 }

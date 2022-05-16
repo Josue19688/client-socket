@@ -2,8 +2,9 @@
     <div class="chat-menu">
         <label class="d-block list-group-label mt-0">Chats</label>
 
-        <ul class="list-group list-group-user list-unstyled mb-0">
-            <li>
+        <ul class="list-group list-group-user list-unstyled mb-0" >
+
+            <li *ngFor="let usuario of usuariosActivosObs|async">
                 <div class="d-flex align-items-center">
                     <div class="avatar mr-3">
                         <img src="assets\img\user2.jpg" width="50" height="50" class="rounded-circle" alt="image">
@@ -12,135 +13,18 @@
                     </div>
 
                     <div class="user-name">
-                        <h6 class="font-weight-bold">Ellen Cranford</h6>
-                        <span class="d-block">Welcome to React World</span>
+                        <h6 class="font-weight-bold"> {{usuario.nombre}}</h6>
+                        <span class="d-block">{{usuario.sala}}</span>
+                        <span class="d-block">{{usuario.id}}</span>
                     </div>
                 </div>
             </li>
 
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user3.jpg" width="50" height="50" class="rounded-circle" alt="image">
 
-                        <span class="status-online"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Sherell Steckler</h6>
-                        <span class="d-block">React World</span>
-                    </div>
-                </div>
-            </li>
         </ul>
 
-        <label class="d-block list-group-label">Contacts</label>
 
-        <ul class="list-group list-group-user list-unstyled mb-0">
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user4.jpg" width="50" height="50" class="rounded-circle" alt="image">
 
-                        <span class="status-away"></span>
-                    </div>
 
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Mitsue Dove</h6>
-                        <span class="d-block">New Order</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user5.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-offline"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Sasha Abele</h6>
-                        <span class="d-block">Lorem Ipsum</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user6.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-online"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Angeles Valls</h6>
-                        <span class="d-block">Lorem come</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user7.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-away"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Viki Hankins</h6>
-                        <span class="d-block">Web HTML</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user8.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-busy"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Shery Corlett</h6>
-                        <span class="d-block">HTML products</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user9.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-offline"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Jame Kolar</h6>
-                        <span class="d-block">Admin template</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-3">
-                        <img src="assets\img\user10.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-online"></span>
-                    </div>
-
-                    <div class="user-name">
-                        <h6 class="font-weight-bold">Damon Alvelo</h6>
-                        <span class="d-block">Web responsive</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
     </div>
 </div>
