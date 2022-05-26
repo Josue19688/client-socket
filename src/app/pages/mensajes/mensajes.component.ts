@@ -10,23 +10,45 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class MensajesComponent implements OnInit, OnDestroy {
 
+  cuerpo='';
   texto='';
   mensajesSubscription:Subscription|undefined;
   elemento:any ;
+  totalmensajes:any[]=[];
   mensajes:any[]=[];
+  mensajescomision:any[]=[];
   constructor(
     public wsService:WebsocketService,
     public chatService:ChatService
     ) { }
 
   ngOnInit(): void {
-    this.elemento=document.getElementById('chat-mensajes');
-    this.mensajesSubscription=this.chatService.getMessages().subscribe(msg=>{
-      this.mensajes.push(msg);
+    //this.elemento=document.getElementById('chat-mensajes');
+    this.mensajesSubscription=this.chatService.getMessages().subscribe((msg:any)=>{
+      
+      this.totalmensajes.push(msg);
 
-      setTimeout(()=>{
-        this.elemento.scrollTop=this.elemento?.scrollHeight;
-      },50)
+      if(msg.cuerpo==='saliendo'){
+        this.mensajescomision.push(msg);
+        this.mensajes.forEach((item)=>{
+          if(item.de===msg.de){
+            let busqueda = this.mensajes.indexOf(item);
+            this.mensajes.splice(busqueda,1);
+          }
+      
+        });
+      }
+      if(msg.cuerpo==='ingresando'){
+        this.mensajes.push(msg);
+
+        this.mensajescomision.forEach((item)=>{
+         if(item.de===msg.de){
+          let busqueda = this.mensajescomision.indexOf(item);
+          this.mensajescomision.splice(busqueda,1);
+         }
+      
+        });
+      }
     })
   }
 
@@ -39,6 +61,8 @@ export class MensajesComponent implements OnInit, OnDestroy {
     if(this.texto.trim().length===0){
       return;
     }
+
+    //hacemos la llamada al socket
     this.chatService.sendMessage(this.texto);
 
     this.texto='';

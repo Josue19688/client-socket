@@ -40,6 +40,8 @@ export class WebsocketService {
 
   emit(evento:string, payload?:any, callback?:any){
     console.log('Emitiendo evento',evento);
+
+    //con esto emitimos el evento al backend
     this.socket.emit(evento,payload,callback);
   }
  /*

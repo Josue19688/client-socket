@@ -14,9 +14,12 @@ export class ChatService {
       cuerpo:mensaje
     };
 
+    //mandamos este evento mensaje 
     this.wsService.emit('mensaje',payload);
   }
 
+
+  //nos devuelve este mensaje de respuesta
   getMessages(){
     return this.wsService.listen('mensaje-nuevo');
   }

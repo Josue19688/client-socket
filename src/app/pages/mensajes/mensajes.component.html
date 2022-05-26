@@ -1,4 +1,4 @@
-<div class="chat-content-area mt-20">
+<!-- <div class="chat-content-area mt-20">
     <div class="sidebar-left">
         <div class="sidebar">
             <div class="chat-sidebar-header d-flex align-items-center">
@@ -86,4 +86,117 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+<div class="container">
+    <br><br><br>
+<div class="invoice-area mb-90">
+    <div class="invoice-header mb-30 d-flex justify-content-between">
+        <div class="invoice-center-text"><br><br>
+            <h3 class="mb-0">CONTROL SEGURIDAD FUNCIONARIOS</h3>
+            
+        </div>
+
+        <div class="invoice-right-text">
+           
+        </div>
+    </div>
+
+    <div class="invoice-media mb-30">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="text">
+                    
+                    <h4 class="mb-2" >Agentes Dentro </h4>
+                    <div *ngFor="let msg of mensajes ">
+                        <span style="color:green" class="d-block mb-1">{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}</span>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+
+            <div class="col-lg-3 ">
+                <div class="text">
+                    <h4 class="mb-2">Agentes de comision</h4>
+                   
+                    <div *ngFor="let msg of mensajescomision ">
+                        <span style="color:red" class="d-block mb-1">{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="text text-right" *ngFor="let msg of totalmensajes ">
+                    <span style="color:red" class="d-block mb-1">{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}</span>
+                </div>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+
+    <!-- <div class="invoice-table table-responsive mb-30">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Description</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Apple iPhone XR (64GB)</td>
+                    <td class="text-right">$100.00</td>
+                    <td class="text-right">$100.00</td>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td>Apple iPhone XR Black</td>
+                    <td class="text-right">$25.00</td>
+                    <td class="text-right">$50.00</td>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td>HeadPhone</td>
+                    <td class="text-right">$15.00</td>
+                    <td class="text-right">$45.00</td>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td>HeadPhone</td>
+                    <td class="text-right">$15.00</td>
+                    <td class="text-right">$45.00</td>
+                </tr>
+
+                <tr>
+                    <td class="text-right" colspan="3"><strong>Subtotal</strong></td>
+                    <td class="text-right">$195.00</td>
+                </tr>
+
+                <tr>
+                    <td class="text-right" colspan="3"><strong>Sales Tax 5.0%</strong></td>
+                    <td class="text-right">$9.75</td>
+                </tr>
+
+                <tr>
+                    <td class="text-right total" colspan="3"><strong>Total</strong></td>
+                    <td class="text-right total-price"><strong>$204.75</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="invoice-btn-box text-right">
+        <a href="#" class="default-btn"><i class='bx bx-printer'></i> Print</a>
+        <a href="#" class="optional-btn"><i class='bx bx-paper-plane'></i> Send Invoice</a>
+    </div> -->
+</div>
 </div>
