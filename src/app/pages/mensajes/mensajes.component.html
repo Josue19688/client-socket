@@ -90,9 +90,9 @@
 
 
 
-<div class="container">
-    <br><br><br>
-<div class="invoice-area mb-90">
+<!-- <div class="container">
+    <br><br><br> -->
+<!-- <div class="invoice-area mb-90">
     <div class="invoice-header mb-30 d-flex justify-content-between">
         <div class="invoice-center-text"><br><br>
             <h3 class="mb-0">CONTROL SEGURIDAD FUNCIONARIOS</h3>
@@ -136,67 +136,41 @@
         </div>
     </div>
 
-    <!-- <div class="invoice-table table-responsive mb-30">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Description</th>
-                    <th>Unit Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>01</td>
-                    <td>Apple iPhone XR (64GB)</td>
-                    <td class="text-right">$100.00</td>
-                    <td class="text-right">$100.00</td>
-                </tr>
-
-                <tr>
-                    <td>01</td>
-                    <td>Apple iPhone XR Black</td>
-                    <td class="text-right">$25.00</td>
-                    <td class="text-right">$50.00</td>
-                </tr>
-
-                <tr>
-                    <td>01</td>
-                    <td>HeadPhone</td>
-                    <td class="text-right">$15.00</td>
-                    <td class="text-right">$45.00</td>
-                </tr>
-
-                <tr>
-                    <td>01</td>
-                    <td>HeadPhone</td>
-                    <td class="text-right">$15.00</td>
-                    <td class="text-right">$45.00</td>
-                </tr>
-
-                <tr>
-                    <td class="text-right" colspan="3"><strong>Subtotal</strong></td>
-                    <td class="text-right">$195.00</td>
-                </tr>
-
-                <tr>
-                    <td class="text-right" colspan="3"><strong>Sales Tax 5.0%</strong></td>
-                    <td class="text-right">$9.75</td>
-                </tr>
-
-                <tr>
-                    <td class="text-right total" colspan="3"><strong>Total</strong></td>
-                    <td class="text-right total-price"><strong>$204.75</strong></td>
-                </tr>
-            </tbody>
-        </table>
+  
+        
+</div> -->
+<div class="container">
+<h4 class="mb-2 text-center" >DEPARTAMENTO FUNCIONARIOS</h4>
+<br>
+    <div class="row">
+        <div class="col">
+            <h4 class="mb-2" >Agentes Dentro</h4>
+            <ol id="lista2" >
+                <div *ngFor="let msg of mensajes">
+                    <li>{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}&nbsp;&nbsp;{{msg.now}}</li>
+                </div>
+            </ol>
+        </div>
+        <div class="col">
+            <h4 class="mb-2" >Agentes de Comisión</h4>
+            <ol id="lista2">
+                <div *ngFor="let msg of mensajescomision">
+                    <li>{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}&nbsp;&nbsp;{{msg.now}}</li>
+                </div> 
+            </ol>
+        </div>
+        <div class="col">
+            <h4 class="mb-2" >Total Movimientos</h4>
+            <ol id="lista2">
+                <div *ngFor="let msg of totalmensajes">
+                    <li>{{msg.de}}&nbsp;&nbsp;:&nbsp;&nbsp;{{msg.cuerpo}}&nbsp;&nbsp;{{msg.now}}</li>
+                </div> 
+            </ol>
+        </div>
     </div>
+</div>
 
-    <div class="invoice-btn-box text-right">
-        <a href="#" class="default-btn"><i class='bx bx-printer'></i> Print</a>
-        <a href="#" class="optional-btn"><i class='bx bx-paper-plane'></i> Send Invoice</a>
-    </div> -->
-</div>
-</div>
+
+
+
+
