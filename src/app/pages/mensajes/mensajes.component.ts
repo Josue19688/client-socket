@@ -25,30 +25,30 @@ export class MensajesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //this.elemento=document.getElementById('chat-mensajes');
     this.mensajesSubscription=this.chatService.getMessages().subscribe((msg:any)=>{
-      //console.log(msg);
-      this.totalmensajes.push(msg);
+      console.log(msg);
+      // this.totalmensajes.push(msg);
 
-      if(msg.cuerpo==='saliendo'){
-        this.mensajescomision.push(msg);
-        this.mensajes.forEach((item)=>{
-          if(item.de===msg.de){
-            let busqueda = this.mensajes.indexOf(item);
-            this.mensajes.splice(busqueda,1);
-          }
-      
-        });
-      }
-      if(msg.cuerpo==='ingresando'){
-        this.mensajes.push(msg);
+      // if(msg.cuerpo==='saliendo'){
+      //   this.mensajescomision.push(msg);
+      //   this.mensajes.forEach((item)=>{
+      //     if(item.de===msg.de){
+      //       let busqueda = this.mensajes.indexOf(item);
+      //       this.mensajes.splice(busqueda,1);
+      //     }
 
-        this.mensajescomision.forEach((item)=>{
-         if(item.de===msg.de){
-          let busqueda = this.mensajescomision.indexOf(item);
-          this.mensajescomision.splice(busqueda,1);
-         }
-      
-        });
-      }
+      //   });
+      // }
+      // if(msg.cuerpo==='ingresando'){
+      //   this.mensajes.push(msg);
+
+      //   this.mensajescomision.forEach((item)=>{
+      //    if(item.de===msg.de){
+      //     let busqueda = this.mensajescomision.indexOf(item);
+      //     this.mensajescomision.splice(busqueda,1);
+      //    }
+
+      //   });
+      // }
     })
   }
 
