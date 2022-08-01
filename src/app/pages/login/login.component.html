@@ -3,17 +3,18 @@
         <div class="d-table-cell">
             <div class="login-form">
                 <div class="logo">
-                    <a href="dashboard-analytics.html"><img src="assets\img\logo.png" alt="image"></a>
+                    <a href="dashboard-analytics.html"><img src="assets\img\dorado.png" style="width: 150px; height:150px;" alt="image"></a>
                 </div>
 
-                <h2>Bienvenido</h2>
+                <h2>Chat Soporte <br>Bienvenido</h2>
 
                 <form (ngSubmit)="ingresar()">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="nombre" placeholder="nombre" autofocus autocomplete="off" [(ngModel)]="nombre">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre.." autofocus autocomplete="off" [(ngModel)]="nombre">
                         <span class="label-title"><i class='bx bx-user'></i></span>
+                       
                     </div>
-                    
+                    <span style="color:red;">Agregar nombre completo.</span><br><br>
 
                     <button type="submit" class="login-btn" [disabled]="nombre.trim().length===0">Login</button>
 

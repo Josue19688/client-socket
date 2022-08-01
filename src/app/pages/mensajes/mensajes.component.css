@@ -51,3 +51,8 @@
     border-radius: 2em;
     transition: all .3s ease-out;
 }
+
+img{
+    width:60px;
+    height: 60px;
+}

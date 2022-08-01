@@ -1,0 +1,89 @@
+   <!-- Start Sidemenu Area -->
+   <div class="sidemenu-area">
+    <div class="sidemenu-header">
+        <a href="dashboard-analytics.html" class="navbar-brand d-flex align-items-center">
+            <img src="assets\img\dorado.png" width="50" height="50" class="rounded-circle" alt="image">
+            <span>Digici</span>
+        </a>
+
+        <div class="burger-menu d-none d-lg-block">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+
+        <div class="responsive-burger-menu d-block d-lg-none">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+    </div>
+
+    <div class="sidemenu-body">
+        <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar="">
+            <!-- <li class="nav-item-title">
+                Main
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
+                    <span class="icon"><i class='bx bx-home-circle'></i></span>
+                    <span class="menu-title">Dashboard</span>
+                    <span class="badge">2</span>
+                </a>
+
+                <ul class="sidemenu-nav-second-level">
+                    <li class="nav-item">
+                        <a href="dashboard-analytics.html" class="nav-link">
+                            <span class="icon"><i class='bx bx-analyse'></i></span>
+                            <span class="menu-title">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="dashboard-ecommerce.html" class="nav-link">
+                            <span class="icon"><i class='bx bxs-shopping-bag'></i></span>
+                            <span class="menu-title">eCommerce</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> -->
+
+            <li class="nav-item-title">
+                Apps
+            </li>
+
+            <li class="nav-item">
+                <a routerLink="/mensajes" class="nav-link">
+                    <span class="icon"><i class='bx bx-message'></i></span>
+                    <span class="menu-title">Chat</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/solicitudes" class="nav-link">
+                    <span class="icon"><i class='bx bx-note'></i></span>
+                    <span class="menu-title">Solicitudes</span>
+                </a>
+            </li>
+            <!-----Metodo para salir o cerra la sesion de usuarios------>
+            <li class="nav-item">
+                <a class="nav-link" >
+                    <form (ngSubmit)="salir()" >
+                    
+    
+                        <button style="border: none !important;" type="submit"  >
+                            <span class="icon">
+                                <i class="bx bx-exit"></i>
+                            </span>
+                            <span class="menu-title">Salir</span>
+                        </button>
+    
+                       
+                    </form>
+                </a>
+               
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End Sidemenu Area -->

@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { UsuarioGuardService } from './guards/usuario-guard.service';
 import { LoginComponent } from './pages/login/login.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
 
 
 const appRoutes:Routes=[
@@ -10,6 +11,11 @@ const appRoutes:Routes=[
   {
     path:'mensajes',
     component:MensajesComponent,
+    canActivate:[UsuarioGuardService]
+  },
+  {
+    path:'solicitudes',
+    component:SolicitudesComponent,
     canActivate:[UsuarioGuardService]
   },
   {path:'**', component:LoginComponent}

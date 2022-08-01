@@ -1,3 +1,4 @@
+
 <div class="sidebar-content d-flex chat-sidebar" data-simplebar="">
     <div class="chat-menu">
         <label class="d-block list-group-label mt-0">Chats</label>
@@ -7,24 +8,18 @@
             <li *ngFor="let usuario of usuariosActivosObs|async">
                 <div class="d-flex align-items-center">
                     <div class="avatar mr-3">
-                        <img src="assets\img\user2.jpg" width="50" height="50" class="rounded-circle" alt="image">
-
-                        <span class="status-busy"></span>
+                        <img src="assets\img\userlogo.png"  class="rounded-circle" alt="image">
+                        <span class="status-online"></span>
+                        <!-- <span class="status-busy"></span> -->
                     </div>
 
                     <div class="user-name">
                         <h6 class="font-weight-bold"> {{usuario.nombre}}</h6>
-                        <span class="d-block">{{usuario.sala}}</span>
-                        <span class="d-block">{{usuario.id}}</span>
+                        <!-- <span class="d-block">{{usuario.sala}}</span>
+                        <span class="d-block">{{usuario.id}}</span> -->
                     </div>
                 </div>
             </li>
-
-
         </ul>
-
-
-
-
     </div>
 </div>
