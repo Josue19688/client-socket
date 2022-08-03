@@ -16,6 +16,7 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
+import { RegistrosseguridadComponent } from './pages/registrosseguridad/registrosseguridad.component';
 
 
 
@@ -27,7 +28,8 @@ import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component'
     LoginComponent,
     MensajesComponent,
     SidebarComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    RegistrosseguridadComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ export class MensajesComponent implements OnInit, OnDestroy {
   cuerpo='';
   texto='';
   mensajesSubscription:Subscription|undefined;
-  registroSubscription:Subscription|undefined;
+  
 
   elemento:any ;
   totalmensajes:any[]=[];
@@ -37,11 +37,10 @@ export class MensajesComponent implements OnInit, OnDestroy {
     });
 
    
-    // this.mensajesSubscription=this.chatService.getMessages2().subscribe((msg:any)=>{
-    //   console.log(msg);
-    //   this.scrollToBottom();
-    //   this.mensajes.push(msg);
-    // });
+    
+
+
+    //Nota : Realizar la vista para el control de datos para registros de movimeintos para seguridad un regalo
 
   }
 
